@@ -7,7 +7,5 @@ aws configure set aws_secret_access_key dynamodb-local-secret-access-key
 aws configure set default.region us-east-1
 
 # Use JSON to populate database
-aws dynamodb batch-write-item --request-items file://ProductCatalog.json
-aws dynamodb batch-write-item --request-items file://Forum.json
-aws dynamodb batch-write-item --request-items file://Thread.json
-aws dynamodb batch-write-item --request-items file://Reply.json
+aws dynamodb create-table --endpoint-url http://localhost:8000 --cli-input-json file://sample-data/CreateMusicTable.json
+aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://sample-data/Music.json

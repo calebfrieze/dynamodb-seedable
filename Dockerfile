@@ -1,5 +1,8 @@
 FROM centos:7
 
+RUN mkdir -p dynamodb
+WORKDIR /dynamodb
+
 RUN yum  --enablerepo=centosplus install -y \
     wget \
     unzip \
@@ -18,6 +21,9 @@ COPY seed-data.sh /usr/bin
 RUN chmod +x /usr/bin/seed-data.sh
 COPY dynamodb-bootstrap.sh /usr/bin
 RUN chmod +x /usr/bin/dynamodb-bootstrap.sh
+
+# Seed data files
+COPY sample-data sample-data
 
 # Docker entrypoint script to run dynamo and aws setup
 COPY docker-entrypoint.sh /usr/bin
