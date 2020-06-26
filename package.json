@@ -1,0 +1,13 @@
+{
+  "name": "dynamodb-seedable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "email": "calebfrieze@gmail.com",
+    "name": "Caleb Frieze"
+  },
+  "scripts": {
+    "build": "docker build"
+  }
+}
