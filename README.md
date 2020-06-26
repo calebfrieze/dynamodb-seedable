@@ -1,0 +1,1 @@
+bid-service-dynamo-db
